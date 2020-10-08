@@ -15,7 +15,6 @@ QRectF MySquare::boundingRect() const
 void MySquare::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 
-    QRectF rec = boundingRect();
     QBrush brush(Qt::blue);
 
     if(Pressed)
@@ -27,8 +26,8 @@ void MySquare::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
         brush.setColor(Qt::green);
     }
 
-
-    QRectF rectangle(10,10,300,300);
+    rectangle = new QRectF(-75,-75,250,250);
+    qDebug()<<"rectangle centre : "<<rectangle->center();
 
     int startAngle = 0 * 16;
     int spanAngle = 25 * 16;
@@ -62,52 +61,51 @@ void MySquare::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     int spanAngle13 = 360*16;
 
     painter->setBrush(Qt::cyan);
-    painter->drawPie(rectangle, startAngle, spanAngle);
-    painter->drawText(200,200, "Mahendra");
-
-
+    painter->drawPie((QRectF)*rectangle, startAngle, spanAngle);
+    // painter->drawText(200,200, "Mahendra");
 
     painter->setBrush(Qt::red);
-    painter->drawPie(rectangle, startAngle2, spanAngle2);
+    painter->drawPie((QRectF)*rectangle, startAngle2, spanAngle2);
 
     painter->setBrush(Qt::green);
-    painter->drawPie(rectangle, startAngle3, spanAngle3);
+    painter->drawPie((QRectF)*rectangle, startAngle3, spanAngle3);
 
     painter->setBrush(Qt::blue);
-    painter->drawPie(rectangle, startAngle4, spanAngle4);
+    painter->drawPie((QRectF)*rectangle, startAngle4, spanAngle4);
 
     painter->setBrush(Qt::yellow);
-    painter->drawPie(rectangle, startAngle5, spanAngle5);
+    painter->drawPie((QRectF)*rectangle, startAngle5, spanAngle5);
 
     painter->setBrush(Qt::black);
-    painter->drawPie(rectangle, startAngle6, spanAngle6);
+    painter->drawPie((QRectF)*rectangle, startAngle6, spanAngle6);
 
     painter->setBrush(Qt::white);
-    painter->drawPie(rectangle, startAngle7, spanAngle7);
+    painter->drawPie((QRectF)*rectangle, startAngle7, spanAngle7);
 
     painter->setBrush(Qt::gray);
-    painter->drawPie(rectangle, startAngle8, spanAngle8);
+    painter->drawPie((QRectF)*rectangle, startAngle8, spanAngle8);
 
     painter->setBrush(Qt::darkBlue);
-    painter->drawPie(rectangle, startAngle9, spanAngle9);
+    painter->drawPie((QRectF)*rectangle, startAngle9, spanAngle9);
 
     painter->setBrush(Qt::darkMagenta);
-    painter->drawPie(rectangle, startAngle10, spanAngle10);
+    painter->drawPie((QRectF)*rectangle, startAngle10, spanAngle10);
 
     painter->setBrush(Qt::darkCyan);
-    painter->drawPie(rectangle, startAngle11, spanAngle11);
+    painter->drawPie((QRectF)*rectangle, startAngle11, spanAngle11);
 
     painter->setBrush(Qt::darkYellow);
-    painter->drawPie(rectangle, startAngle12, spanAngle12);
+    painter->drawPie((QRectF)*rectangle, startAngle12, spanAngle12);
 
     painter->setBrush(Qt::white);
     painter->setPen(Qt::black);
-    painter->drawEllipse(rectangle.center(), 40, 40);
-    painter->drawText(150,165,"Spin");
+
+    painter->drawEllipse(rectangle->center(), 30, 30);
+    painter->drawText(40,55,"Spin");
+
+    //painter->rotate(200);
 
     //painter->Antialiasing;
-
-
 }
 
 void MySquare::mousePressEvent(QGraphicsSceneMouseEvent *event)

@@ -11,10 +11,12 @@ int main(int argc, char *argv[])
     MainWindow *w = new MainWindow;
 
     mainwindow1 thread(w);
-
     thread.start();
+
     qDebug() << "hello from GUI thread " << a.thread()->currentThreadId();
    // thread.wait();  // do not exit before the thread is completed!
+
+
 
     return a.exec();
 }

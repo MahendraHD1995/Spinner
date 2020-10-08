@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     QGraphicsView *view;
+    MySquare *square;
     ~MainWindow();
 
 
@@ -24,6 +25,5 @@ protected:
 private:
     QGraphicsScene *scene;
 
-    MySquare *square;
 };
 #endif // MAINWINDOW_H
