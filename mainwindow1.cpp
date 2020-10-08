@@ -8,18 +8,14 @@ mainwindow1::mainwindow1(MainWindow *w2)
 
 void mainwindow1::run(){
     qDebug() << "hello from worker thread " << thread()->currentThreadId();
-   // MainWindow w;
 
     while(1){
-       // w1->view->centerOn(0,0);
-        w1->view->rotate(20);
-        //w1->square->transform();
 
-       // w1->view->rotate(-20);
-       // w1->view->rotate(-20);
+        w1->view->rotate(-30);
+
         qDebug()<<"output";
-        //QThread::sleep(1);
-        QThread::usleep(100000);
+
+        QThread::usleep(1000000);
     }
 
 }

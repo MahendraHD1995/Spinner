@@ -27,7 +27,10 @@ void MySquare::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     }
 
     rectangle = new QRectF(-75,-75,250,250);
+
+
     qDebug()<<"rectangle centre : "<<rectangle->center();
+    qDebug()<<"rectangle top left corner : "<<rectangle->topLeft();
 
     int startAngle = 0 * 16;
     int spanAngle = 25 * 16;
@@ -101,11 +104,36 @@ void MySquare::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     painter->setPen(Qt::black);
 
     painter->drawEllipse(rectangle->center(), 30, 30);
+
     painter->drawText(40,55,"Spin");
 
-    //painter->rotate(200);
 
-    //painter->Antialiasing;
+
+    painter->drawText(-30,-30,"A");
+
+    painter->drawText(20,-55,"B");
+
+    painter->drawText(75,-55,"C");
+
+    painter->drawText(130,-25,"D");
+
+    painter->drawText(160,30,"E");
+
+    painter->drawText(160,90,"F");
+
+    painter->drawText(125,135,"G");
+
+    painter->drawText(75,165,"H");
+
+    painter->drawText(10,160,"I");
+
+    painter->drawText(-30,135,"J");
+
+    painter->drawText(-60,80,"K");
+
+    painter->setPen(Qt::white);
+    painter->drawText(-60,20,"L");
+
 }
 
 void MySquare::mousePressEvent(QGraphicsSceneMouseEvent *event)

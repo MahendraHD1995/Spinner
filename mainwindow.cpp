@@ -5,15 +5,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     scene = new QGraphicsScene(this);
     view = new  QGraphicsView(scene);
-   // view->setFixedSize(250,250);
-
     view->show();
-
     square = new MySquare();
-    //scene->setSceneRect();
-
-    //square->rectangle->moveRight()
-
     scene->addItem(square);
 }
 

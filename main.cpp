@@ -14,9 +14,6 @@ int main(int argc, char *argv[])
     thread.start();
 
     qDebug() << "hello from GUI thread " << a.thread()->currentThreadId();
-   // thread.wait();  // do not exit before the thread is completed!
-
-
 
     return a.exec();
 }
